@@ -5,15 +5,22 @@ import MealItem from "./MealItem/MealItem";
 
 const AvailableMeals = () => {
     const mealList = DUMMY_MEALS.map(meal =>
-            <MealItem name={meal.name} description={meal.description} price={meal.price}/>
+        <MealItem
+            id={meal.id}
+            key={meal.id}
+            name={meal.name}
+            description={meal.description}
+            price={meal.price}
+        />
     )
+
     return (
         <section className={classes.meals}>
-           <Card>
-               <ul>{mealList}</ul>
-           </Card>
+            <Card>
+                <ul>{mealList}</ul>
+            </Card>
         </section>
     )
-}
+};
 
 export default AvailableMeals;
